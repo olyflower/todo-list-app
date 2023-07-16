@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <title>TODO-list-app</title>
+</head>
+<style>
+    .content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    }
+    form {
+            background-color: #d6efec;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+</style>
+<body>
+<section>
+    <div class="content">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

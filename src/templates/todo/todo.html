@@ -1,0 +1,49 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO-list-app</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/todo_icon.png' %}">
+    <link rel="stylesheet" href="../static/css/reset.css">
+</head>
+<style>
+    .container-todo {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    }
+    .title-todo {
+    margin-bottom: 30px;
+    }
+
+</style>
+<body>
+<div class="wrapper-todo">
+    <div class="container-todo">
+        <h1 class="title-todo">ToDo List</h1>
+        <ul>
+            {% for task in object_list %}
+            <li>
+                {{ task.title }}
+                <form method="POST" action="{% url 'todo:task_delete' task.pk %}">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
