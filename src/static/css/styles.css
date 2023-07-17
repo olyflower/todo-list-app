@@ -1,9 +1,10 @@
 .wrapper {
-	background-color: #deeae4;
+
 }
 .main-section {
-	max-width: 1200px;
+	max-width: 1000px;
 	margin: 0 auto;
+	background-color: #deeae4;
 }
 .main-content {
 	margin-bottom: 100px;

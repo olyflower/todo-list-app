@@ -8,42 +8,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TODO-list-app</title>
     <link rel="icon" type="image/x-icon" href="{% static 'img/todo_icon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/todo.css">
 </head>
-<style>
-    .container-todo {
-    max-width: 1200px;
-    margin: 0 auto;
-
-    }
-    .title-todo {
-    margin-bottom: 30px;
-    }
-
-</style>
 <body>
-<div class="wrapper-todo">
-    <div class="container-todo">
-        <h1 class="title-todo">ToDo List</h1>
-        <ul>
-            {% for task in object_list %}
-            <li>
-                {{ task.title }}
-                <form method="POST" action="{% url 'todo:task_delete' task.pk %}">
-                    {% csrf_token %}
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-            {% endfor %}
-        </ul>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">Add Task</button>
-        </form>
+<header class="header-wrapper">
+    <div>
+        <img src="{% static 'img/todo_icon.png' %}" alt="logo" class="logo">
     </div>
+    <h1 class="header-title">ToDo list</h1>
+</header>
+<main>
+    <div class="wrapper-todo">
+        <div class="container-todo">
+            <div>
+                <h2 class="main-title">{{ user.first_name }}, your tasks:</h2>
+                <ul>
+                    {% for task in object_list %}
+                    <li class="tasks">
+                        {{ task.title }}
+                        {% if task.due_date %}
+                        ({{ task.due_date }})
+                        {% endif %}
+                        <form method="POST" action="{% url 'todo:delete_task' task.pk %}">
+                            {% csrf_token %}
+                            <button type="submit">&#x1F5D1;</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
 
-</div>
+                <div class="add-task">
+                    <form method="POST" action="{% url 'todo:add_task' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="submit">Add task</button>
+                    </form>
+                </div>
+            </div>
 
+            <div class="todo-img">
+                <img src="{% static 'img/todo_img.jpg' %}" alt="todo">
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer class="footer-wrapper">
+    <a href="{% url 'todo:index' %}" class="exit-button">Exit</a>
+</footer>
 </body>
 </html>
