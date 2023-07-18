@@ -29,6 +29,7 @@
         <div class="container-todo">
             <div class="content-todo">
                 <h2 class="main-title">{{ user.first_name }}, your tasks:</h2>
+                {% if object_list %}
                 <ul>
                     {% for task in object_list %}
                     <li class="tasks">
@@ -43,7 +44,9 @@
                     </li>
                     {% endfor %}
                 </ul>
-
+                {% else %}
+                    <p class="content-text">You don't have any tasks yet</p>
+                {% endif %}
                 <div class="add-task">
                     <form method="POST" action="{% url 'todo:add_task' %}">
                         {% csrf_token %}
