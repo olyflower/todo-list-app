@@ -3,9 +3,11 @@ header, main, footer {
 	font-family: 'Open Sans', sans-serif;
 }
  /*header*/
-.header-wrapper {
+.header-wrapper {margin-top: 40px;}
 
-	max-width: 1000px;
+.header-content {
+	box-sizing: border-box;
+	max-width: 950px;
 	margin: auto;
 	padding: 15px 60px 15px 20px;
 	display: flex;
@@ -26,10 +28,14 @@ header, main, footer {
 .container-todo {
 	display: flex;
 	justify-content: space-around;
-	max-width: 1000px;
+	max-width: 950px;
+	min-height: 400px;
 	margin: auto;
 	background-color: #e7ede5;
 	}
+.content-todo {
+
+}
 .main-title {
 	font-size: 40px;
 	font-weight: bold;
@@ -56,19 +62,19 @@ header, main, footer {
 
 /*footer*/
 .footer-wrapper {
-    max-width: 1000px;
+    max-width: 950px;
     margin: auto;
     display: flex;
     justify-content: center;
     background-color: #c4e0bc;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 27px;
+    padding-bottom: 27px;
 }
 .exit-button {
     text-decoration: none;
     padding: 15px 0;
     border-radius: 20px;
-    background: #47b83b;
+    background: rgba(0, 104, 74, 0.78);
     display: flex;
     justify-content: center;
     width: 200px;

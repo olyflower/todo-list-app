@@ -56,7 +56,7 @@ ROOT_URLCONF = 'config.urls'
 
 AUTH_USER_MODEL = "accounts.Customer"
 
-LOGIN_REDIRECT_URL = "todo:index"
+LOGIN_REDIRECT_URL = "todo:todo"
 LOGOUT_REDIRECT_URL = "todo:index"
 
 TEMPLATES = [

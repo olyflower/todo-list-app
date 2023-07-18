@@ -11,7 +11,7 @@ class IndexView(TemplateView):
 
 
 class ToDoListView(ListView):
-    redirect_field_name = "index"
+    redirect_field_name = "todo:todo"
     template_name = '../templates/todo/todo.html'
     model = Task
 

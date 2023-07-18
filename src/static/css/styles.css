@@ -1,10 +1,14 @@
-.wrapper {
-
+header, main, footer {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
 }
+
 .main-section {
-	max-width: 1000px;
-	margin: 0 auto;
+	max-width: 600px;
+	height: 400px;
+	margin: auto;
 	background-color: #deeae4;
+	margin-top: 100px;
 }
 .main-content {
 	margin-bottom: 100px;
@@ -19,40 +23,44 @@
 .title {
 	max-width: 600px;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.5em;
-	margin: 0 auto;
+	margin: auto;
 	text-align: center;
 	padding-top: 30px;
 }
 
 .enter {
     padding-bottom: 250px;
-	max-width: 250px;
-	margin: auto;
-	display: flex;
-	justify-content: space-between;
+    max-width: 350px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 .login {
 	text-decoration: none;
+	font-size: 18px;
 	font-weight: 600;
 	text-align: center;
-	padding: 17px 36px;
+	padding: 17px 45px;
 	border: 1px solid rgba(0, 0, 0, 0.5);
 	color: #000000;
+	background-color: white;
 }
 
 .registration {
   text-decoration: none;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   background-color: #42b854;
-  padding: 17px 36px;
+  padding: 17px 45px;
   color: #ffffff;
 }
 
 .todo-list {
   text-decoration: none;
+  font-size: 25px;
   font-weight: 600;
   text-align: center;
   background-color: #42b854;
@@ -61,6 +69,7 @@
 }
 .logout {
   text-decoration: none;
+  font-size: 25px;
   font-weight: 600;
   text-align: center;
   padding: 17px 36px;
